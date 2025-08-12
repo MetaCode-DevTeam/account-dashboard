@@ -1,0 +1,134 @@
+@import 'tailwindcss';
+
+@theme {
+    /* color */
+    /* blue */
+    --color-primary-main: #264cc8;
+    --color-primary-light: #4067e9;
+    --color-primary-dark: #1b368f;
+    --color-primary-bg: #264cc8;
+    --color-primary-bg-hover: #f5f7fe;
+    --color-primary-bg-resting: #cbd6f9;
+    /* blue */
+
+    /* gray */
+    --color-secondary-main: #8a8d93;
+    --color-secondary-light: #9c9fa4;
+    --color-secondary-dark: #4d5056;
+    --color-secondary-bg: #777b82;
+    --color-secondary-bg-hover: #f6f6f7;
+    --color-secondary-bg-resting: #c5c6c9;
+    /* gray */
+
+    /* info */
+    --color-info-main: #16b1ff;
+    --color-info-light: #32baff;
+    --color-info-dark: #0e71a3;
+    --color-info-bg: #139ce0;
+    --color-info-bg-hover: #effaff;
+    --color-info-bg-resting: #99ddff;
+    /* info */
+
+    /* warning */
+    --color-warning-main: #ffb400;
+    --color-warning-light: #ffb547;
+    --color-warning-dark: #a37300;
+    --color-warning-bg: #e09e00;
+    --color-warning-bg-hover: #fff9eb;
+    --color-warning-bg-resting: #ffda80;
+    /* warning */
+
+    /* error */
+    --color-error-main: #ff4c51;
+    --color-error-light: #ff6166;
+    --color-error-dark: #a33134;
+    --color-error-bg: #e04347;
+    --color-error-bg-hover: #fff1f1;
+    --color-error-bg-resting: #ffa6a8;
+    /* error */
+
+    /* success */
+    --color-success-main: #56ca00;
+    --color-success-light: #6ad01f;
+    --color-success-dark: #378100;
+    --color-success-bg: #4cb200;
+    --color-success-bg-hover: #f2fbeb;
+    --color-success-bg-resting: #abe580;
+    /* success */
+
+    --color-background-light: #f4f5fa;
+    --color-background-dark: #28243d;
+
+    --color-background-secondary-light: #fff;
+    --color-background-secondary-dark: #312d4b;
+
+    --color-main: #264cc8;
+
+    /* color */
+
+    /* fonts */
+    --font-morabba: 'morabba';
+    --font-dana: 'main';
+    --font-dana-light: 'main-light';
+    --font-dana-bold: 'main-bold';
+    --font-dana-black: 'main-black';
+
+    --spacing-laptop: 1232px;
+}
+
+@font-face {
+    font-family: 'morabba';
+    src: url('/fonts/MorabbaSemiBold[editby].ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'main';
+    src: url('/public/fonts/DanaFaNum-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'main-light';
+    src: url('/public/fonts/DanaFaNum-UltraLight.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'main-bold';
+    src: url('/public/fonts/DanaFaNum-DemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'main-black';
+    src: url('/public/fonts/DanaFaNum-Black.ttf') format('truetype');
+}
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@layer components {
+    .resp {
+        @apply max-w-[1240px] lg:px-14 max-lg:px-4  max-sm:px-3;
+    }
+
+    * {
+        transition: all 300ms;
+    }
+
+    .text-landing {
+        @apply font-dana-bold text-4xl text-center;
+    }
+}
+
+@layer base {
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+        &:where([data-theme='dark'], [data-theme='dark'] *) {
+            -webkit-box-shadow: 0 0 0 30px #312d4b inset !important;
+        }
+        -webkit-box-shadow: 0 0 0 30px white inset !important;
+    }
+
+    button {
+        @apply hover:cursor-pointer active:brightness-75 transition-all duration-300 outline-0;
+    }
+}
